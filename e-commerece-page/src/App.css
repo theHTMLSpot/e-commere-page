@@ -1,0 +1,181 @@
+.App {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+
+  display: block;
+  min-height: 100vh;
+  width: 100vw;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main {
+  width: 90vw;
+}
+
+.main ul {
+  display: flex;
+  padding: 30px;
+  margin-left: 50px;
+}
+
+.navbar {
+  display: flex;
+}
+
+.main ul li {
+  padding-left: 10px;
+  margin-left: 20px;
+  list-style: none;
+  font-size: 0.7em;
+  font-weight: 300;
+  color: #464646;
+}
+
+#title p {
+  font-size: 1em;
+  font-weight: 900;
+}
+
+.profile ul {
+  display: flex;
+  padding: 30px;
+  margin-right: 20px;
+  justify-content: flex-end;
+}
+
+.profile ul li {
+  padding-left: 10px;
+  margin-left: 20px;
+  list-style: none;
+  font-size: 0.7em;
+  font-weight: 300;
+  color: #464646;
+}
+
+
+.shopping {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: left;
+  height: 70vh;
+}
+.shopping-main
+{
+  text-align: left;
+  display: block;
+  width: 40vw;
+  margin: 0px;
+  margin-left: 40px;
+  font-size: 0.7em;
+}
+.hidden
+{
+  display: none;
+}
+.strikethrough
+{
+  text-decoration: line-through;
+}
+.pricing{
+  display: flex;
+  align-items: center;
+  width: 40vw;
+  margin: 0;
+}
+.discount
+{
+  margin-left: 30px;
+  background-color: black;
+  text-align: center;
+  width: 5vw;
+  heidth: 10vh;
+  font-size: 1.3em;
+  border-radius: 5px;
+  color: white;
+}
+.pricing h5{
+  display: block;
+}
+.actions
+{
+  display: flex;
+  justify-content: center;
+}
+
+.amount
+{
+  display: flex;
+  width: 40vw;
+  align-items: center;
+
+
+}
+.amount .plus-minus{
+  width: 5vw;
+  background-color: #e3e6e4;
+  height: 5vh;
+  padding: 0;
+  margin: 0;
+  color: #cf731d;
+  font-size: 1.3em;
+  line-height: 1.5em;
+
+}
+.amount p{
+  width: 5vw;
+  height: 5vh;
+  text-align: center;
+  font-size: 1em;
+  align-self: center;
+  line-height: 2.2em;
+  background-color: #e3e6e4;
+}
+#plus
+{
+  border-radius: 0 25% 25% 0;
+}
+#minus
+{
+  border-radius: 25% 0 0 25%;
+}
+.add-to-cart
+{
+  background-color: #cf731d;
+  color: white;
+  height: 5vh;
+  width: 10vw;
+  margin-left: 20px;
+  border-radius: 6px;
+  font-size: 0.7em;
+
+}
