@@ -17,7 +17,6 @@ function App() {
         
         <Shopping price={170} discount={10}/>
        </div>
-       <LightBox />
        
       </header>
     </div>

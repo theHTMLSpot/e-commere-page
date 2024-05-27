@@ -1,33 +1,44 @@
 import { useState } from 'react';
-import classNames from 'classnames'
 import Image1 from '../image-product-1.jpg';
-import Image2 from '../image-product-2.jpg'
-import Image3 from '../image-product-3.jpg'
+import Image2 from '../image-product-2.jpg';
+import Image3 from '../image-product-3.jpg';
 import Image4 from '../image-product-4.jpg';
 
+function LightBox() {
+  const [lightboxActive, setLightboxActive] = useState(true);
+  const [activeImage, setActiveImage] = useState(1);
 
-function LightBox()
-{
-    const [lightboxActive, setLightboxActive] = useState(true);
-    const [activeImage, setActiveImage] = useState(1);
-    return(
-        <>
-            {lightboxActive ? (
-                <div className="lightbox-background">
-                    <button id='exit' onClick={(e) => setLightboxActive(false)}> X </button>
-                    <div id='lightbox-main'>
-                        <img className={activeImage === 1 ? "MainImage" : 'hidden'} src={Image1} alt="1" />
-                        <img className={activeImage === 2 ? "MainImage" : 'hidden'}  src={Image2} alt='2'/>
-                        <img className={activeImage === 3 ? "MainImage" : 'hidden'}  src={Image3} alt="3" />
-                        <img className={activeImage === 4 ? "MainImage" : 'hidden'}  src={Image4} alt='4'/>
-                    </div>
-                    
-                </div>
-            ) : (
-                <></>
-            )}
-        </>
-    );
+  const images = [Image1, Image2, Image3, Image4];
+
+  const handleNextImage = () => {
+    setActiveImage((prevImage) => (prevImage === images.length ? 1 : prevImage + 1));
+  };
+
+  const handlePrevImage = () => {
+    setActiveImage((prevImage) => (prevImage === 1 ? images.length : prevImage - 1));
+  };
+
+  return (
+    <>
+      {lightboxActive && (
+        <div className="lightbox-background">
+          <button id="exit" onClick={() => setLightboxActive(false)}> X </button>
+          <div id="lightbox-main">
+            <button className="image-amount left" onClick={handlePrevImage}> - </button>
+            {images.map((image, index) => (
+              <img
+                key={index}
+                className={activeImage === index + 1 ? "MainImage" : "hidden"}
+                src={image}
+                alt={`Product ${index + 1}`}
+              />
+            ))}
+            <button className="image-amount right" onClick={handleNextImage}> + </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
 export default LightBox;

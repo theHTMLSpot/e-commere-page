@@ -220,32 +220,71 @@
   left: 0;
   z-index: 9999; /* High value to ensure it is above other content */
 }
-#lightbox-main {
+.lightbox-background {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Changed from absolute to relative */
+  z-index: 1000;
+}
+
+#lightbox-main {
+  width: 80vw;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .MainImage {
-  position: absolute; /* Ensures all images overlap each other */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Adjust based on your preference */
-  scale: 0.5;
+  object-fit: contain;
+  margin: 0;
+  scale: 0.7;
 }
-#exit
-{
-  align-self: flex-start;
-  justify-self: flex-end;
-  margin: 10px;
+
+.hidden {
+  display: none;
+}
+
+#exit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   background: none;
   color: white;
   border: none;
   font-size: 1.5em;
+}
 
+.image-amount {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: black;
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.image-amount.left {
+  left: 23%;
+  
+}
+
+.image-amount.right {
+  right: 23%;
 }
