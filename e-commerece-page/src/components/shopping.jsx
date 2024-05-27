@@ -33,14 +33,14 @@ function Shopping({ price, discount }) {
                 </p>
                 <div className="pricing">
                     <h4>
-                        ${discount === 0 ? price.toFixed(2) : discountedPrice.toFixed(2)}
+                        ${discount === 0 ? price.toFixed(2) * amount.toFixed(2) : discountedPrice.toFixed(2) * amount.toFixed(2)}
                     </h4>
                     <p className={discount === 0 ? 'hidden' : 'discount'}>
                         {discount}%
                     </p>
                 </div>
                 <h5 className={discount === 0 ? 'hidden' : 'strikethrough'}>
-                    ${price.toFixed(2)}
+                    ${price.toFixed(2)  * amount.toFixed(2)}
                 </h5>
                 <div className="actions">
                     <div className="amount">

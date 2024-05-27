@@ -119,7 +119,7 @@
   background-color: black;
   text-align: center;
   width: 5vw;
-  height: 10vh;
+  height: fit-content;
   font-size: 1.3em;
   border-radius: 5px;
   color: white;
@@ -206,4 +206,46 @@
   scale: 0.4;
   border-radius: 26px;
   
+}
+
+.lightbox-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed; /* Ensures it stays fixed on the viewport */
+  background-color: hsla(0, 0%, 0%, 0.8);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* High value to ensure it is above other content */
+}
+#lightbox-main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Changed from absolute to relative */
+}
+
+.MainImage {
+  position: absolute; /* Ensures all images overlap each other */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Adjust based on your preference */
+  scale: 0.5;
+}
+#exit
+{
+  align-self: flex-start;
+  justify-self: flex-end;
+  margin: 10px;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+
 }

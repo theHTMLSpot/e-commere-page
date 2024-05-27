@@ -3,6 +3,7 @@ import NavBar from './components/navbar'
 import { React } from 'react';
 import Shopping from './components/shopping'
 import Images from './components/images'
+import LightBox from './components/lightbox';
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
 
         <Images />
         
-        <Shopping price={200} discount={0}/>
+        <Shopping price={170} discount={10}/>
        </div>
+       <LightBox />
        
       </header>
     </div>
