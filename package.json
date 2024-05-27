@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "classnames": "^2.5.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

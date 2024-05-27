@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ImageScrollBar from './image-scroll-bar';
 import Image1 from '../image-product-1.jpg';
 import Image2 from '../image-product-2.jpg';
 import Image3 from '../image-product-3.jpg';
@@ -36,8 +37,13 @@ function LightBox({ lightboxActive , setLightboxActive}) {
               />
             ))}
             <button className="image-amount right" onClick={handleNextImage}> <Next />  </button>
+            
           </div>
+
+         
         </div>
+
+        
       )}
     </>
   );
