@@ -3,9 +3,11 @@ import Image1 from '../image-product-1.jpg';
 import Image2 from '../image-product-2.jpg';
 import Image3 from '../image-product-3.jpg';
 import Image4 from '../image-product-4.jpg';
+import { ReactComponent as Back } from '../icon-previous.svg';
+import { ReactComponent as Next } from '../icon-next.svg';
+import { ReactComponent as Exit } from '../icon-close.svg';
 
-function LightBox() {
-  const [lightboxActive, setLightboxActive] = useState(true);
+function LightBox({ lightboxActive , setLightboxActive}) {
   const [activeImage, setActiveImage] = useState(1);
 
   const images = [Image1, Image2, Image3, Image4];
@@ -22,9 +24,9 @@ function LightBox() {
     <>
       {lightboxActive && (
         <div className="lightbox-background">
-          <button id="exit" onClick={() => setLightboxActive(false)}> X </button>
+          <button id="exit" onClick={() => setLightboxActive(false)}> <Exit /> </button>
           <div id="lightbox-main">
-            <button className="image-amount left" onClick={handlePrevImage}> - </button>
+            <button className="image-amount left" onClick={handlePrevImage}> <Back /> </button>
             {images.map((image, index) => (
               <img
                 key={index}
@@ -33,7 +35,7 @@ function LightBox() {
                 alt={`Product ${index + 1}`}
               />
             ))}
-            <button className="image-amount right" onClick={handleNextImage}> + </button>
+            <button className="image-amount right" onClick={handleNextImage}> <Next />  </button>
           </div>
         </div>
       )}

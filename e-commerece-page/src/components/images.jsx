@@ -15,7 +15,7 @@ function Images() {
         <img src="../image-product-1.jpg" alt="" />
       </div>
       {/* Render the lightbox component conditionally based on lightboxActive state */}
-      {lightboxActive && <LightBox />}
+      {lightboxActive && <LightBox lightboxActive={true} setLightboxActive={setLightboxActive}/>}
     </>
   );
 }
